@@ -1,0 +1,47 @@
+<form>
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nombre"
+      name="nombre"
+      placeholder="Nombre"
+      [(ngModel)]="nuevoProducto.nombre"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="cantidad" class="form-label"
+      >Cantidad {{ nuevoProducto.cantidad }}</label
+    >
+    <input
+      type="range"
+      min="0"
+      max="15"
+      step="1"
+      class="form-range"
+      id="cantidad"
+      name="cantidad"
+      placeholder="Cantidad"
+      [(ngModel)]="nuevoProducto.cantidad"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="departamento" class="form-label">Departamento</label>
+    <select
+      [(ngModel)]="nuevoProducto.departamento"
+      class="form-select"
+      id="departamento"
+      name="departamento"
+    >
+      <option selected>Depatamento</option>
+      <option value="one">One</option>
+      <option value="two">Two</option>
+      <option value="three">Three</option>
+    </select>
+  </div>
+  <button type="button" (click)="onClick()" class="btn btn-primary float-end">
+    Enviar
+  </button>
+</form>
+{{ nuevoProducto | json }}

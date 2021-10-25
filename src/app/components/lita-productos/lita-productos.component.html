@@ -1,0 +1,18 @@
+<div class="row gap-2">
+  <div
+    class="card"
+    style="width: 18rem"
+    *ngFor="let producto of productos; let i = index"
+  >
+    <div class="card-body">
+      <h5 class="card-title">{{ producto.nombre.toUpperCase() }}</h5>
+      <p class="card-text">
+        {{ producto.cantidad }}
+        <small>{{ producto.departamento.toUpperCase() }}</small>
+      </p>
+      <button class="btn btn-primary float-end" (click)="onClick(i)">
+        COMPRAR
+      </button>
+    </div>
+  </div>
+</div>
